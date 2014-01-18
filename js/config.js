@@ -30,7 +30,7 @@ jQuery(function() {
 		if (jQuery.browser.msie && jQuery.browser.version <= 9)
 			jQuery('form').n33_formerize();
 
-		jQuery('form .form-button-submit').click(function(e) {
+		$('#send-card-button').click(function(e) {
 			e.preventDefault();
 			$.ajax({
 				type: "POST",
@@ -55,7 +55,7 @@ jQuery(function() {
 			  		message: $("#message").val()
 			  	},
 			  	success: function(data) {
-						$("#response").val() = data;
+						$("#response").text(data);
 			  	}
 			});
 			jQuery(this).closest('form').submit();
