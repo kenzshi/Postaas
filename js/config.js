@@ -43,7 +43,12 @@ $(function() {
 	});
 
 	$("#purchase-button4").click(function() {
-		var quantity = $("#subject").val();
+		var quantity = parseInt($("#subject").val());
+		if (isNaN(quantity) || quantity <= 5) {
+			quantity = 6;
+		}
+		quantity = Math.ceil(quantity);
+		$("#subject").val(quantity);
 		var output = quantity + " cards for $" + 3*quantity;
 		$("#selection").text(output);
 		$("#selecion").attr("cost", 3*quantity);
