@@ -100,6 +100,7 @@
 
 		form input[type=text],
 		form input[type=password],
+		form input[type=email],
 		form select,
 		form textarea
 		{
@@ -120,6 +121,7 @@
 
 		form input[type=text]:focus,
 		form input[type=password]:focus,
+		form input[type=email]:focus,
 		form select:focus,
 		form textarea:focus
 		{
@@ -129,7 +131,7 @@
 
 		form textarea
 		{
-			height: 15em;
+			height: 8em;
 		}
 		
 		form .formerize-placeholder
