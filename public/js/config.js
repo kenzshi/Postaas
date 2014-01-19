@@ -69,6 +69,7 @@ jQuery(function() {
 	// 	if (jQuery.browser.msie && jQuery.browser.version <= 9)
 	// 		jQuery('form').n33_formerize();
 
+<<<<<<< HEAD:public/js/config.js
 	// 	$('#send-card-button').click(function(e) {
 	// 		e.preventDefault();
 	// 		$.ajax({
@@ -99,6 +100,38 @@ jQuery(function() {
 	// 		});
 	// 		jQuery(this).closest('form').submit();
 	// 	});
+=======
+		$('#send-card-button').click(function(e) {
+			e.preventDefault();
+			$.ajax({
+				type: "POST",
+			  	url: "http://localhost:5000/api/v1/card/send?key=_APIKEY_",
+			  	data: {
+			  		to_name: $("#to_name").val(),
+			  		to_address1: $("#to_address1").val(),
+			  		to_address2: $("#to_address2").val(),
+			  		to_city: $("#to_city").val(),
+			  		to_state: $("#to_state").val(),
+			  		to_country: $("#to_country").val(),
+			  		to_zip: $("#to_zip").val(),
+
+			  		from_name: $("#from_name").val(),
+			  		from_address1: $("#from_address1").val(),
+			  		from_address2: $("#from_address2").val(),
+			  		from_city: $("#from_city").val(),
+			  		from_state: $("#from_state").val(),
+			  		from_country: $("#from_country").val(),
+			  		from_zip: $("#from_zip").val(),
+
+			  		message: $("#message").val()
+			  	},
+			  	success: function(data) {
+						$("#response").text(data);
+			  	}
+			});
+			jQuery(this).closest('form').submit();
+		});
+>>>>>>> 2a2d4526e56e798455111c49790887cd813a9c4a:js/config.js
 		jQuery('form .form-button-reset').click(function(e) { e.preventDefault(); jQuery(this).closest('form')[0].reset();
 	});
 	
